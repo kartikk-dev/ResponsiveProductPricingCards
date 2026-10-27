@@ -1,0 +1,550 @@
+
+/* ---------- Base ---------- */
+
+:root {
+  color-scheme: light;
+
+  --background: #f8f8f4;
+  --surface: #ffffff;
+  --text: #202b25;
+  --muted: #58645c;
+  --border: #d9dfd8;
+  --green: #245b43;
+  --green-dark: #194431;
+  --green-light: #edf4ee;
+  --badge-text: #ffffff;
+
+  --content-width: 1160px;
+  --card-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #b45309;
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+/* ---------- Main section ---------- */
+
+.pricing-section {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 32px 0 24px;
+}
+
+.pricing-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 0 42px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 44px;
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--green);
+  color: white;
+  font-size: 21px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.pricing-header h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700;
+  letter-spacing: -2.5px;
+  line-height: 1.08;
+}
+
+.header-description {
+  max-width: 530px;
+  margin: 20px 0 26px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+
+/* ---------- Billing toggle ---------- */
+
+.billing-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.billing-toggle {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+}
+
+.billing-button {
+  min-height: 40px;
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.billing-button.is-active {
+  background: var(--green);
+  color: white;
+}
+
+.billing-note {
+  color: var(--green-dark);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ---------- Pricing cards ---------- */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  box-shadow: 0 3px 12px rgb(32 43 37 / 4%);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: #aabbb0;
+  box-shadow: 0 16px 32px rgb(32 43 37 / 11%);
+}
+
+.popular-card {
+  border: 2px solid var(--green);
+  padding: 29px 25px;
+}
+
+.popular-card:hover {
+  border-color: var(--green-dark);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  padding: 7px 10px;
+  background: var(--green);
+  color: var(--badge-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.card-heading {
+  min-height: 132px;
+}
+
+.plan-number {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card-heading h2 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  letter-spacing: -0.7px;
+}
+
+.plan-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* ---------- Prices ---------- */
+
+.price-block {
+  margin: 25px 0 4px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 0;
+  font-size: clamp(36px, 3.5vw, 46px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.currency {
+  font-size: 23px;
+  letter-spacing: 0;
+}
+
+.price-unit {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.annual-note {
+  margin: 5px 0 0;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ---------- Plan buttons ---------- */
+
+.plan-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin: 24px 0 28px;
+  padding: 12px 15px;
+  border: 1px solid var(--green);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.plan-button span {
+  font-size: 18px;
+}
+
+.plan-button:hover {
+  background: var(--green-light);
+}
+
+.primary-button {
+  background: var(--green);
+  color: white;
+}
+
+.primary-button:hover {
+  background: var(--green-dark);
+}
+
+
+/* ---------- Feature lists ---------- */
+
+.features {
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.features h3 {
+  margin: 0 0 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.features ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.features li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--green);
+  content: "✓";
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* ---------- Feedback and footer ---------- */
+
+.selection-message {
+  min-height: 24px;
+  margin: 24px 0 0;
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pricing-footer {
+  padding: 24px 0 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.pricing-footer p {
+  margin: 6px 0;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1000px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .popular-card {
+    order: -1;
+  }
+
+  .pricing-card {
+    padding: 26px 22px;
+  }
+
+  .popular-card {
+    padding: 25px 21px;
+  }
+
+  .card-heading {
+    min-height: 125px;
+  }
+
+  .price {
+    font-size: 42px;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .pricing-section {
+    width: calc(100% - 32px);
+    padding-top: 20px;
+  }
+
+  .pricing-header {
+    padding: 8px 0 30px;
+  }
+
+  .brand {
+    margin-bottom: 34px;
+  }
+
+  .pricing-header h1 {
+    font-size: clamp(34px, 9vw, 44px);
+    letter-spacing: -1.7px;
+  }
+
+  .header-description {
+    max-width: 360px;
+    margin: 16px 0 22px;
+    font-size: 14px;
+  }
+
+  .billing-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .billing-toggle {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .billing-button {
+    flex: 1;
+    padding: 9px 14px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .popular-card {
+    order: -1;
+  }
+
+  .pricing-card,
+  .popular-card {
+    padding: 27px 23px;
+  }
+
+  .card-heading {
+    min-height: auto;
+  }
+
+  .price-block {
+    margin-top: 23px;
+  }
+
+  .price {
+    font-size: 44px;
+  }
+
+  .plan-button {
+    margin: 22px 0 25px;
+  }
+
+  .features ul {
+    gap: 13px;
+  }
+
+  .pricing-footer {
+    margin-top: 8px;
+    padding-bottom: 12px;
+  }
+}
+
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 380px) {
+  .pricing-section {
+    width: calc(100% - 24px);
+  }
+
+  .pricing-header h1 {
+    font-size: 33px;
+  }
+
+  .pricing-card,
+  .popular-card {
+    padding: 23px 18px;
+  }
+
+  .popular-card {
+    padding-top: 26px;
+  }
+
+  .card-heading h2 {
+    font-size: 23px;
+  }
+}
+
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .pricing-card:hover {
+    transform: none;
+  }
+}
+.value-ribbon {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  padding: 7px 10px;
+  background: #e7efe6;
+  color: #194431;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Compare subscription plans and find the right workspace for your projects and team."
+  >
+
+  <meta name="theme-color" content="#f8f8f4">
+
+  <title>Pricing Plans | Fieldnote</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <section class="pricing-section" aria-labelledby="pricing-title">
+
+      <header class="pricing-header">
+        <a class="brand" href="#" aria-label="Fieldnote home">
+          <span class="brand-mark" aria-hidden="true">f.</span>
+          <span>fieldnote</span>
+        </a>
+
+        <p class="eyebrow">PLANS & PRICING</p>
+
+        <h1 id="pricing-title">
+          Good work starts<br>
+          with the right plan.
+        </h1>
+
+        <p class="header-description">
+          Everything you need to organise your work, collaborate
+          with your team, and make progress.
+        </p>
+
+        <div class="billing-area">
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <button
+              class="billing-button is-active"
+              id="monthly"
+              type="button"
+              aria-pressed="true"
+            >
+              Monthly
+            </button>
+
+            <button
+              class="billing-button"
+              id="yearly"
+              type="button"
+              aria-pressed="false"
+            >
+              Yearly
+            </button>
+          </div>
+
+          <span class="billing-note">Save up to 20% annually</span>
+        </div>
+      </header>
+
+      <div class="pricing-grid">
+
+        <!-- Starter plan -->
+        <article class="pricing-card" data-plan-card="starter">
+          <div class="card-heading">
+            <span class="plan-number">PERSONAL</span>
+            <h2>Starter</h2>
+
+            <p class="plan-description">
+              A simple space to organise your own work.
+            </p>
+          </div>
+
+          <div class="price-block">
+            <p class="price">
+              <span class="currency">$</span><span
+                class="price-value"
+                data-monthly="12"
+                data-yearly="115"
+              >12</span>
+            </p>
+
+            <p class="price-unit">per month</p>
+          </div>
+
+          <p class="annual-note" hidden>
+            Billed annually at $115.
+          </p>
+
+          <button
+            class="plan-button"
+            type="button"
+            data-plan="Starter"
+          >
+            Get started
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <div class="features">
+            <h3>Included in your plan</h3>
+
+            <ul>
+              <li>Unlimited personal projects</li>
+              <li>Task and deadline tracking</li>
+              <li>Basic progress reports</li>
+              <li>10 GB file storage</li>
+              <li>Email support</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Professional plan -->
+        <article
+          class="pricing-card popular-card"
+          data-plan-card="professional"
+        >
+          <div class="popular-ribbon">MOST POPULAR</div>
+
+          <div class="card-heading">
+            <span class="plan-number">TEAM</span>
+            <h2>Professional</h2>
+
+            <p class="plan-description">
+              Bring people, projects, and priorities together.
+            </p>
+          </div>
+
+          <div class="price-block">
+            <p class="price">
+              <span class="currency">$</span><span
+                class="price-value"
+                data-monthly="29"
+                data-yearly="278"
+              >29</span>
+            </p>
+
+            <p class="price-unit">per month</p>
+          </div>
+
+          <p class="annual-note" hidden>
+            Billed annually at $278.
+          </p>
+
+          <button
+            class="plan-button primary-button"
+            type="button"
+            data-plan="Professional"
+          >
+            Choose Professional
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <div class="features">
+            <h3>Everything in Starter, with</h3>
+
+            <ul>
+              <li>Unlimited team projects</li>
+              <li>Advanced project reports</li>
+              <li>Advanced progress reports</li>
+              <li>Team collaboration tools</li>
+              <li>500 GB file storage</li>
+              <li>Priority email support</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Business plan -->
+        <article class="pricing-card" data-plan-card="business">
+            <div class="value-ribbon">BEST VALUE</div>
+          <div class="card-heading">
+            <span class="plan-number"> BUSINESS</span>
+            <h2>Business</h2>
+
+            <p class="plan-description">
+              More control for growing organisations.
+            </p>
+          </div>
+
+          <div class="price-block">
+            <p class="price">
+              <span class="currency">$</span><span
+                class="price-value"
+                data-monthly="59"
+                data-yearly="566"
+              >59</span>
+            </p>
+
+            <p class="price-unit">per month</p>
+          </div>
+
+          <p class="annual-note" hidden>
+            Billed annually at $566.
+          </p>
+
+          <button
+            class="plan-button"
+            type="button"
+            data-plan="Business"
+          >
+            Explore Business
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <div class="features">
+            <h3>Everything in Professional, with </h3>
+
+            <ul>
+              <li>Advanced access controls</li>
+              <li>Custom team permissions</li>
+              <li>Organisation-wide analytics</li>
+              <li>2 TB file storage</li>
+              <li>Dedicated account support</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="selection-message" id="selection-message" role="status" aria-live="polite"></p>
+
+      <footer class="pricing-footer">
+        <p>Thoughtfully priced for work that matters.</p>
+        <p>Fieldnote is a fictional product created for a web development project.</p>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
